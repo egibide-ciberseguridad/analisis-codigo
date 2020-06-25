@@ -2,10 +2,10 @@
 
 ## Herramientas
 
-[SonarQube](https://docs.sonarqube.org/latest/setup/get-started-2-minutes/)
-[SonarScanner](https://docs.sonarqube.org/latest/analysis/scan/sonarscanner/)
-[Damn Vulnerable Web Application](http://www.dvwa.co.uk)
-[OWASP Dependency-Check](https://owasp.org/www-project-dependency-check/)
+- [SonarQube](https://docs.sonarqube.org/latest/setup/get-started-2-minutes/)
+- [SonarScanner](https://docs.sonarqube.org/latest/analysis/scan/sonarscanner/)
+- [Damn Vulnerable Web Application](http://www.dvwa.co.uk)
+- [OWASP Dependency-Check](https://owasp.org/www-project-dependency-check/)
 
 ## SonarQube
 
