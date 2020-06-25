@@ -32,6 +32,16 @@ services:
       - postgresql:/var/lib/postgresql
       - postgresql_data:/var/lib/postgresql/data
 
+  # https://github.com/ethicalhack3r/DVWA
+  dvwa:
+    image: vulnerables/web-dvwa
+    expose:
+      - 80
+    ports:
+      - "80:80"
+    networks:
+      - sonarnet
+
 networks:
   sonarnet:
 
