@@ -9,6 +9,8 @@
 
 ## SonarQube
 
+Arrancar el servicio con `docker-compose up -d` y acceder al [sitio web](http://localhost:9000).
+
 Usuario `admin/admin`.
 
 ## SonarScanner
