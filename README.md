@@ -27,3 +27,5 @@ docker run -ti -v $(pwd):/usr/src --link sonarqube --network ciberseguridad_sona
 ```bash
 owasp-dependency.sh
 ```
+
+El informe se genera en `odc-reports/dependency-check-report.html`.
