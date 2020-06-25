@@ -64,3 +64,7 @@ docker run -ti -v $(pwd):/usr/src --link sonarqube --network ciberseguridad_sona
   -Dsonar.projectName="My Project Name" \
   -Dsonar.projectVersion=1
 ```
+
+## Integración con IntelliJ
+
+[SonarQube IntelliJ Community Plugin](https://github.com/sonar-intellij-plugin/sonar-intellij-plugin)
