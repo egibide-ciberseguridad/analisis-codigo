@@ -54,3 +54,13 @@ El informe se genera en `odc-reports/dependency-check-report.html`.
       -Dsonar.projectName="My Project Name" \
       -Dsonar.projectVersion=1
     ```
+
+## Analizar código Kotlin
+
+```bash
+    docker run -ti -v $(pwd):/usr/src --link sonarqube --network ciberseguridad_sonarnet newtmitch/sonar-scanner:alpine \
+      -Dsonar.exclusions='**/*.java' \
+      -Dsonar.projectKey=MyProjectKey \
+      -Dsonar.projectName="My Project Name" \
+      -Dsonar.projectVersion=1
+```
