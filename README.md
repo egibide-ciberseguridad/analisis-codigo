@@ -3,10 +3,8 @@
 ## Herramientas
 
 - [SonarQube](https://docs.sonarqube.org/latest/setup/get-started-2-minutes/)
-- [SonarScanner](https://docs.sonarqube.org/latest/analysis/scan/sonarscanner/)
 - [Damn Vulnerable Web Application](http://www.dvwa.co.uk)
 - [OWASP Dependency-Check](https://owasp.org/www-project-dependency-check/)
-- [Descompilar aplicaciones Android](https://medium.com/@alvareztech/descompilar-aplicaciones-android-8e7519732f23)
 
 ## SonarQube
 
@@ -16,13 +14,17 @@ Usuario `admin/admin`.
 
 ## SonarScanner
 
-Lanzar SonarScanner con [Docker](https://github.com/newtmitch/docker-sonar-scanner).
+Lanzar SonarScanner con [Docker](https://docs.sonarqube.org/latest/analysis/scan/sonarscanner/).
 
 ```bash
-docker run -ti -v $(pwd):/usr/src --link sonarqube --network ciberseguridad_sonarnet newtmitch/sonar-scanner:alpine \
-  -Dsonar.projectKey=MyProjectKey \
-  -Dsonar.projectName="My Project Name" \
-  -Dsonar.projectVersion=1
+docker run \
+    --rm \
+    --link sonarqube --network ciberseguridad_sonarnet \
+    -e SONAR_HOST_URL="http://sonarqube:9000" \
+    -e SONAR_LOGIN="c90cff9a40c4284a2dca7021860ff991f3bd526c" \
+    -v "$(pwd):/usr/src" \
+    sonarsource/sonar-scanner-cli \
+    -Dsonar.projectKey=proyecto
 ```
 
 ## OWASP Dependency-Check
@@ -54,6 +56,8 @@ El informe se genera en `odc-reports/dependency-check-report.html`.
       -Dsonar.projectName="My Project Name" \
       -Dsonar.projectVersion=1
     ```
+  
+- Referencia: [Descompilar aplicaciones Android](https://medium.com/@alvareztech/descompilar-aplicaciones-android-8e7519732f23)
 
 ## Analizar código Kotlin
 
