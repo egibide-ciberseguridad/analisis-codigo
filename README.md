@@ -12,9 +12,12 @@ Arrancar el servicio con `docker-compose up -d` y acceder al [sitio web](http://
 
 Usuario `admin/admin`.
 
+Crear un token y guardarlo para usarlo más adelante.
+
 ## SonarScanner
 
-Lanzar SonarScanner con [Docker](https://docs.sonarqube.org/latest/analysis/scan/sonarscanner/).
+Lanzar SonarScanner con [Docker](https://docs.sonarqube.org/latest/analysis/scan/sonarscanner/) en la carpeta que
+contenga el código a analizar:
 
 ```bash
 docker run \
@@ -27,10 +30,14 @@ docker run \
     -Dsonar.projectKey=proyecto
 ```
 
+> El valor de SONAR_LOGIN es el del token creado al instalar SonarQube.
+
 ## OWASP Dependency-Check
 
+Lanzarlo en la carpeta raíz del proyecto a analizar:
+
 ```bash
-owasp-dependency.sh
+~/analisis-codigo/owasp-dependency.sh
 ```
 
 El informe se genera en `odc-reports/dependency-check-report.html`.
@@ -56,8 +63,8 @@ El informe se genera en `odc-reports/dependency-check-report.html`.
       -Dsonar.projectName="My Project Name" \
       -Dsonar.projectVersion=1
     ```
-  
-- Referencia: [Descompilar aplicaciones Android](https://medium.com/@alvareztech/descompilar-aplicaciones-android-8e7519732f23)
+
+- [Descompilar aplicaciones Android](https://medium.com/@alvareztech/descompilar-aplicaciones-android-8e7519732f23)
 
 ## Analizar código Kotlin
 
