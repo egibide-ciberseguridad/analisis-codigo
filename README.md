@@ -1,10 +1,8 @@
-# Ciberseguridad
+# SonarQube
 
-## Herramientas
+[SonarQube Code Quality and Code Security](https://www.sonarqube.org).
 
-- [SonarQube](https://docs.sonarqube.org/latest/setup/get-started-2-minutes/)
-
-## SonarQube
+## Funcionamiento
 
 Arrancar el servicio con `docker-compose up -d` y acceder al [sitio web](http://localhost:9000).
 
