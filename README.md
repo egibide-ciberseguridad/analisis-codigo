@@ -4,7 +4,6 @@
 
 - [SonarQube](https://docs.sonarqube.org/latest/setup/get-started-2-minutes/)
 - [Damn Vulnerable Web Application](http://www.dvwa.co.uk)
-- [OWASP Dependency-Check](https://owasp.org/www-project-dependency-check/)
 
 ## SonarQube
 
@@ -31,16 +30,6 @@ docker run \
 ```
 
 > El valor de SONAR_LOGIN es el del token creado al instalar SonarQube.
-
-## OWASP Dependency-Check
-
-Lanzarlo en la carpeta raíz del proyecto a analizar:
-
-```bash
-~/analisis-codigo/owasp-dependency.sh
-```
-
-El informe se genera en `odc-reports/dependency-check-report.html`.
 
 ## Análisis de un APK
 
