@@ -30,9 +30,19 @@ docker run \
 
 > :book: [Parámetros de análisis](https://docs.sonarqube.org/latest/analysis/analysis-parameters/)
 
-## Integración con IntelliJ
+## Analizar código Java
 
-[SonarQube IntelliJ Community Plugin](https://github.com/sonar-intellij-plugin/sonar-intellij-plugin)
+```bash
+docker run \
+    --rm \
+    --link sonarqube --network ciberseguridad_sonarnet \
+    -e SONAR_HOST_URL="http://sonarqube:9000" \
+    -e SONAR_LOGIN="c90cff9a40c4284a2dca7021860ff991f3bd526c" \
+    -v "$(pwd):/usr/src" \
+    sonarsource/sonar-scanner-cli \
+    -Dsonar.java.binaries=./target/classes/ \
+    -Dsonar.projectKey=proyecto
+```
 
 ## Analizar código Kotlin
 
@@ -47,3 +57,7 @@ docker run \
     -Dsonar.exclusions='**/*.java' \
     -Dsonar.projectKey=proyecto
 ```
+
+## Integración con IntelliJ
+
+[SonarQube IntelliJ Community Plugin](https://github.com/sonar-intellij-plugin/sonar-intellij-plugin)
