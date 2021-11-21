@@ -29,6 +29,7 @@ docker run \
 > El valor de SONAR_LOGIN es el del token creado al instalar SonarQube.
 
 > :book: [Parámetros de análisis](https://docs.sonarqube.org/latest/analysis/analysis-parameters/)
+> :book: [Lenguajes soportados](https://docs.sonarqube.org/latest/analysis/languages/overview/)
 
 ## Analizar código Java
 
