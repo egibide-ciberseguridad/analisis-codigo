@@ -7,6 +7,7 @@ services:
   sonarqube:
     image: sonarqube
     container_name: sonarqube
+    platform: linux/amd64
     expose:
       - 9000
     ports:
