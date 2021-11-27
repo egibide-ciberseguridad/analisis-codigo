@@ -4,11 +4,15 @@
 
 ## Funcionamiento
 
-Arrancar el servicio con `docker-compose up -d` y acceder al [sitio web](http://localhost:9000).
+1. Arrancar el servicio con `make start`.
 
-Usuario `admin/admin`.
+   > En Windows, usar `make windows start`.
 
-Crear un token y guardarlo para usarlo más adelante.
+2. Acceder al [sitio web](http://localhost:9000).
+
+3. Iniciar sesión con el usuario `admin/admin` y cambiar la contraseña cuando lo pida.
+
+4. Crear un token y guardarlo para usarlo más adelante.
 
 ## SonarScanner
 
