@@ -4,9 +4,10 @@
 
 ## Funcionamiento
 
-1. Arrancar el servicio con `make start`.
+1. Arrancar el servicio:
 
-   > En Windows, usar `make windows start`.
+    - Windows: `make windows`.
+    - macOS: `make macos`.
 
 2. Acceder al [sitio web](http://localhost:9000).
 

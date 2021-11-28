@@ -1,0 +1,8 @@
+version: "3"
+
+services:
+
+  sonarqube:
+    image: ciberseguridad_sonarqube
+    build:
+      context: sonarqube-9-community
