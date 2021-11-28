@@ -6,7 +6,7 @@ services:
 
   sonarqube:
     build:
-      context: docker-sonarqube/9/community
+      context: sonarqube-9-community
     container_name: sonarqube
     expose:
       - 9000
