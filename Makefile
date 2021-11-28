@@ -10,6 +10,8 @@ start:
 stop:
 	@docker-compose stop
 
+restart: stop start
+
 stats:
 	@docker stats
 
