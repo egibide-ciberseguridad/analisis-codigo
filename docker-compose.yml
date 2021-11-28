@@ -5,9 +5,9 @@ version: "3"
 services:
 
   sonarqube:
-    image: sonarqube
+    build:
+      context: docker-sonarqube/9/community
     container_name: sonarqube
-    platform: linux/amd64
     expose:
       - 9000
     ports:
