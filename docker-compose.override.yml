@@ -3,5 +3,5 @@ version: "3"
 services:
 
   sonarqube:
-    image: sonarqube
+    image: sonarqube:${SONARQUBE_AMD64_VERSION}
     platform: linux/amd64

@@ -6,3 +6,5 @@ services:
     image: ciberseguridad_sonarqube
     build:
       context: sonarqube-9-community
+      args:
+        - SONARQUBE_ARM64_VERSION=${SONARQUBE_ARM64_VERSION}

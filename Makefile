@@ -1,7 +1,7 @@
 help:
 	@echo 'Opciones:'
 	@echo ''
-	@echo 'windows | macos'
+	@echo 'windows | macos | macos-build'
 	@echo 'stop | stats | clean'
 
 windows:
@@ -10,6 +10,9 @@ windows:
 
 macos:
 	@docker-compose -f docker-compose.yml -f docker-compose.arm64.yml up -d
+
+macos-build:
+	@docker-compose -f docker-compose.yml -f docker-compose.arm64.yml build --pull
 
 stop:
 	@docker-compose stop
