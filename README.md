@@ -28,7 +28,7 @@ docker run \
     -e SONAR_LOGIN="c90cff9a40c4284a2dca7021860ff991f3bd526c" \
     -v "$(pwd):/usr/src" \
     sonarsource/sonar-scanner-cli \
-    -Dsonar.projectKey=proyecto
+    -D sonar.projectKey=proyecto
 ```
 
 > El valor de SONAR_LOGIN es el del token creado al instalar SonarQube.
@@ -46,8 +46,8 @@ docker run \
     -e SONAR_LOGIN="c90cff9a40c4284a2dca7021860ff991f3bd526c" \
     -v "$(pwd):/usr/src" \
     sonarsource/sonar-scanner-cli \
-    -Dsonar.java.binaries=./target/classes/ \
-    -Dsonar.projectKey=proyecto
+    -D sonar.java.binaries=./target/classes/ \
+    -D sonar.projectKey=proyecto
 ```
 
 ## Analizar código Kotlin
@@ -60,8 +60,8 @@ docker run \
     -e SONAR_LOGIN="c90cff9a40c4284a2dca7021860ff991f3bd526c" \
     -v "$(pwd):/usr/src" \
     sonarsource/sonar-scanner-cli \
-    -Dsonar.exclusions='**/*.java' \
-    -Dsonar.projectKey=proyecto
+    -D sonar.exclusions='**/*.java' \
+    -D sonar.projectKey=proyecto
 ```
 
 ## Integración con IntelliJ
