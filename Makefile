@@ -21,8 +21,11 @@ macos-intel: _start
 macos-m1:
 	@docker-compose -f docker-compose.yml -f docker-compose.arm64.yml up -d
 
-_macos-m1-build:
+macos-m1-build:
 	@docker-compose -f docker-compose.yml -f docker-compose.arm64.yml build --pull
+
+macos-m1-build-no-cache:
+	@docker-compose -f docker-compose.yml -f docker-compose.arm64.yml build --no-cache --pull
 
 stop:
 	@docker-compose stop
