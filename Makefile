@@ -19,7 +19,11 @@ windows-wsl: _parche_wsl _start _urls
 
 windows-hyperv: _start _urls
 
-linux: _start _urls
+_parche_linux:
+	@echo "Este script necesita permisos de administrador para continuar"
+	@sudo sysctl -w vm.max_map_count=262144
+
+linux: _parche_linux _start _urls
 
 macos-intel: _start _urls
 
