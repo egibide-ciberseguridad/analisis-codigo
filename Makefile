@@ -1,13 +1,13 @@
 help:
-	@echo '---------'
-	@echo 'SonarQube'
-	@echo '---------'
-	@echo 'Opciones:'
-	@echo ''
-	@echo 'windows-wsl / windows-hyperv / macos-intel / macos-m1'
-	@echo 'stop / stop-all'
-	@echo 'stats / logs'
-	@echo 'clean'
+	@echo "---------"
+	@echo "SonarQube"
+	@echo "---------"
+	@echo "Opciones:"
+	@echo ""
+	@echo "windows-wsl / windows-hyperv / macos-intel / macos-m1"
+	@echo "stop / stop-all"
+	@echo "stats / logs"
+	@echo "clean"
 
 _parche_wsl:
 	@c:\windows\sysnative\wsl.exe -d docker-desktop sysctl -w vm.max_map_count=262144
@@ -50,7 +50,7 @@ clean:
 	@docker-compose down -v --remove-orphans
 
 _urls:
-	@echo ''
-	@echo '---------------------------------'
-	@echo '[SonarQube] http://localhost:9000'
-	@echo '---------------------------------'
+	@echo ""
+	@echo "---------------------------------"
+	@echo "[SonarQube] http://localhost:9000"
+	@echo "---------------------------------"
