@@ -6,63 +6,26 @@
 
 1. Arrancar el servicio:
 
-    - Windows: `make windows`.
-    - macOS: `make macos`.
+    - Windows (WSL2): `make windows-wsl`.
+    - Windows (Hyper-V): `make windows-hyperv`.
+    - macOS (Intel): `make macos-intel`.
+    - macOS (M1): `make macos-m1`.
 
 2. Acceder al [sitio web](http://localhost:9000).
 
 3. Iniciar sesión con el usuario `admin/admin` y cambiar la contraseña cuando lo pida.
 
-4. Crear un token y guardarlo para usarlo más adelante.
+4. [Crear un token](http://localhost:9000/admin/users) de acceso y guardarlo para usarlo más adelante.
 
 ## SonarScanner
 
-Lanzar SonarScanner con [Docker](https://docs.sonarqube.org/latest/analysis/scan/sonarscanner/) en la carpeta que
-contenga el código a analizar:
+Lanzar el script de escaneado correspondiente a la plataforma y tipo de proyecto que se vaya a escanear:
 
-```bash
-docker run \
-    --rm \
-    --link sonarqube --network ciberseguridad_sonarnet \
-    -e SONAR_HOST_URL="http://sonarqube:9000" \
-    -e SONAR_LOGIN="c90cff9a40c4284a2dca7021860ff991f3bd526c" \
-    -v "$(pwd):/usr/src" \
-    sonarsource/sonar-scanner-cli \
-    -D sonar.projectKey=proyecto
+```
+sonar-scanner-cli-m1.sh TOKEN RUTA_PROYECTO NOMBRE_PROYECTO
 ```
 
-> El valor de SONAR_LOGIN es el del token creado al instalar SonarQube.
-
-> :book: [Parámetros de análisis](https://docs.sonarqube.org/latest/analysis/analysis-parameters/)
-> :book: [Lenguajes soportados](https://docs.sonarqube.org/latest/analysis/languages/overview/)
-
-## Analizar código Java
-
-```bash
-docker run \
-    --rm \
-    --link sonarqube --network ciberseguridad_sonarnet \
-    -e SONAR_HOST_URL="http://sonarqube:9000" \
-    -e SONAR_LOGIN="c90cff9a40c4284a2dca7021860ff991f3bd526c" \
-    -v "$(pwd):/usr/src" \
-    sonarsource/sonar-scanner-cli \
-    -D sonar.java.binaries=./target/classes/ \
-    -D sonar.projectKey=proyecto
-```
-
-## Analizar código Kotlin
-
-```bash
-docker run \
-    --rm \
-    --link sonarqube --network ciberseguridad_sonarnet \
-    -e SONAR_HOST_URL="http://sonarqube:9000" \
-    -e SONAR_LOGIN="c90cff9a40c4284a2dca7021860ff991f3bd526c" \
-    -v "$(pwd):/usr/src" \
-    sonarsource/sonar-scanner-cli \
-    -D sonar.exclusions='**/*.java' \
-    -D sonar.projectKey=proyecto
-```
+> La ruta al proyecto tiene que ser absoluta.
 
 ## Integración con IntelliJ
 
@@ -72,3 +35,4 @@ docker run \
 
 - [Dockerfile](https://github.com/SonarSource/docker-sonarqube/tree/master/9/community) de la imagen de Docker oficial.
 - [Fichero de Docker Compose](https://gist.github.com/Warchant/0d0f0104fe7adf3b310937d2db67b512) original.
+- [Dockerfile](https://github.com/SonarSource/sonar-scanner-cli-docker/tree/master/4) original de la imagen del scanner.
