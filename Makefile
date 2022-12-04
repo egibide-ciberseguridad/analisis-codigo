@@ -1,4 +1,7 @@
 help:
+	@echo '---------'
+	@echo 'SonarQube'
+	@echo '---------'
 	@echo 'Opciones:'
 	@echo ''
 	@echo 'windows-wsl / windows-hyperv / macos-intel / macos-m1'
@@ -12,14 +15,15 @@ _parche_wsl:
 _start:
 	@docker-compose up -d
 
-windows-wsl: _parche_wsl _start
+windows-wsl: _parche_wsl _start _urls
 
-windows-hyperv: _start
+windows-hyperv: _start _urls
 
-macos-intel: _start
+macos-intel: _start _urls
 
 macos-m1:
 	@docker-compose -f docker-compose.yml -f docker-compose.arm64.yml up -d
+	@$(MAKE) _urls
 
 macos-m1-build:
 	@docker-compose -f docker-compose.yml -f docker-compose.arm64.yml build --pull
@@ -41,3 +45,9 @@ logs:
 
 clean:
 	@docker-compose down -v --remove-orphans
+
+_urls:
+	@echo ''
+	@echo '---------------------------------'
+	@echo '[SonarQube] http://localhost:9000'
+	@echo '---------------------------------'
