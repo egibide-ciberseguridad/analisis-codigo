@@ -2,7 +2,7 @@
 
 if [ $# -lt 3 ]; then
   echo ''
-  echo 'Uso:  sonar-scanner-cli-m1.sh TOKEN RUTA_PROYECTO NOMBRE_PROYECTO'
+  echo 'Uso:  sonar-scanner-cli-maven-m1.sh TOKEN RUTA_PROYECTO NOMBRE_PROYECTO'
   exit 1
 fi
 
