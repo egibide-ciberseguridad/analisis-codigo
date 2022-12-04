@@ -4,7 +4,7 @@ help:
 	@echo "---------"
 	@echo "Opciones:"
 	@echo ""
-	@echo "windows-wsl / windows-hyperv / macos-intel / macos-m1"
+	@echo "windows-wsl / windows-hyperv / linux / macos-intel / macos-m1"
 	@echo "stop / stop-all"
 	@echo "stats / logs"
 	@echo "clean"
@@ -18,6 +18,8 @@ _start:
 windows-wsl: _parche_wsl _start _urls
 
 windows-hyperv: _start _urls
+
+linux: _start _urls
 
 macos-intel: _start _urls
 

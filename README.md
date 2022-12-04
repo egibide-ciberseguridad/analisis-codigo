@@ -8,6 +8,7 @@
 
     - Windows (WSL2): `make windows-wsl`.
     - Windows (Hyper-V): `make windows-hyperv`.
+    - Linux: `make linux`.
     - macOS (Intel): `make macos-intel`.
     - macOS (M1): `make macos-m1`.
 
