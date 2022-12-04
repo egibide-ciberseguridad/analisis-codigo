@@ -25,11 +25,14 @@ macos-m1:
 	@docker-compose -f docker-compose.yml -f docker-compose.arm64.yml up -d
 	@$(MAKE) _urls
 
-macos-m1-build:
-	@docker-compose -f docker-compose.yml -f docker-compose.arm64.yml build --pull
+macos-m1-build-sonarqube:
+	@docker-compose -f docker-compose.yml -f docker-compose.arm64.yml build --pull sonarqube
 
-macos-m1-build-no-cache:
-	@docker-compose -f docker-compose.yml -f docker-compose.arm64.yml build --no-cache --pull
+macos-m1-build-sonarqube-no-cache:
+	@docker-compose -f docker-compose.yml -f docker-compose.arm64.yml build --no-cache --pull sonarqube
+
+macos-m1-build-scanner:
+	@docker-compose -f docker-compose.yml -f docker-compose.arm64.yml build --pull sonar-scanner-cli
 
 stop:
 	@docker-compose stop

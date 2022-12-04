@@ -8,3 +8,12 @@ services:
       context: sonarqube-9-community
       args:
         - SONARQUBE_ARM64_VERSION=${SONARQUBE_ARM64_VERSION}
+
+  sonar-scanner-cli:
+    image: ciberseguridad-sonar-scanner-cli
+    build:
+      context: sonar-scanner-cli-docker
+      args:
+        - SONAR_SCANNER_VERSION=${SONAR_SCANNER_CLI_ARM64_VERSION}
+    networks:
+      - sonarnet
