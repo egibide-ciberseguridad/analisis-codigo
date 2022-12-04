@@ -11,7 +11,7 @@ docker run ^
   -e SONAR_LOGIN="%1" ^
   -v "%2:/usr/src" ^
   sonarsource/sonar-scanner-cli ^
-  -D sonar.exclusions='**/*.java' ^
+  -D sonar.exclusions="**/*.java" ^
   -D sonar.projectKey="%3"
 
 exit /b 0
