@@ -7,7 +7,7 @@ if [ $# -lt 3 ]; then
   exit 1
 fi
 
-docker-compose -f docker-compose.yml -f docker-compose.arm64.yml run \
+docker compose -f docker-compose.yml -f docker-compose.arm64.yml run \
   --rm \
   -e SONAR_HOST_URL="http://sonarqube:9000" \
   -e SONAR_LOGIN="$1" \
