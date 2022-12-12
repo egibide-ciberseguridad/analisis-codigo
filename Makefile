@@ -1,13 +1,26 @@
-help:
-	@echo "---------"
-	@echo "SonarQube"
-	@echo "---------"
-	@echo "Opciones:"
-	@echo ""
-	@echo "windows-wsl / windows-hyperv / linux / macos-intel / macos-m1"
-	@echo "stop / stop-all"
-	@echo "stats / logs"
-	@echo "clean"
+#!make
+
+ifneq (,$(wildcard ./.env))
+    include .env
+    export
+else
+$(error No se encuentra el fichero .env)
+endif
+
+help: _header
+	${info }
+	@echo Opciones:
+	@echo -------------------------------------------------------------
+	@echo windows-wsl / windows-hyperv / linux / macos-intel / macos-m1
+	@echo stop / stop-all
+	@echo stats / logs
+	@echo clean
+	@echo -------------------------------------------------------------
+
+_header:
+	@echo ---------
+	@echo SonarQube
+	@echo ---------
 
 _parche_wsl:
 	@c:\windows\sysnative\wsl.exe -d docker-desktop sysctl -w vm.max_map_count=262144
@@ -55,8 +68,8 @@ logs:
 clean:
 	@docker-compose down -v --remove-orphans
 
-_urls:
-	@echo ""
-	@echo "---------------------------------"
-	@echo "[SonarQube] http://localhost:9000"
-	@echo "---------------------------------"
+_urls: _header
+	${info }
+	@echo ---------------------------------
+	@echo [SonarQube] http://localhost:9000
+	@echo ---------------------------------
