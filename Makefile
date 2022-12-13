@@ -26,7 +26,7 @@ _parche_wsl:
 	@c:\windows\sysnative\wsl.exe -d docker-desktop sysctl -w vm.max_map_count=262144
 
 _start:
-	@docker compose up -d
+	@docker compose up -d sonarqube
 
 windows-wsl: _parche_wsl _start _urls
 
@@ -41,7 +41,7 @@ linux: _parche_linux _start _urls
 macos-intel: _start _urls
 
 macos-m1:
-	@docker compose -f docker-compose.yml -f docker-compose.arm64.yml up -d
+	@docker compose -f docker-compose.yml -f docker-compose.arm64.yml up -d sonarqube
 	@$(MAKE) _urls
 
 macos-m1-build-sonarqube:
