@@ -20,8 +20,16 @@
 
 Lanzar el script de escaneado correspondiente a la plataforma y tipo de proyecto que se vaya a escanear:
 
+En Linux y macOS:
+
 ```
 sonar-scanner-cli.sh TOKEN RUTA_PROYECTO NOMBRE_PROYECTO
+```
+
+En Windows:
+
+```
+sonar-scanner-cli.bat TOKEN RUTA_PROYECTO NOMBRE_PROYECTO
 ```
 
 > La ruta al proyecto tiene que ser absoluta.
