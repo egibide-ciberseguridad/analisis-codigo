@@ -1,6 +1,6 @@
 # SonarQube
 
-[SonarQube Code Quality and Code Security](https://www.sonarqube.org).
+[SonarQube Code Quality and Code Security](https://www.sonarsource.com/products/sonarqube/).
 
 ## Funcionamiento
 
@@ -11,21 +11,20 @@
    | Windows (WSL2)    | `make windows-wsl`    |
    | Windows (Hyper-V) | `make windows-hyperv` |
    | Linux             | `make linux`          |
-   | macOS (Intel)     | `make macos-intel`    |
-   | macOS (M1)        | `make macos-m1`       |
+   | macOS             | `make macos`          |
 
 2. Acceder al [sitio web](http://localhost:9000).
 
 3. Iniciar sesión con el usuario `admin/admin` y cambiar la contraseña cuando lo pida.
 
-4. [Crear un token](http://localhost:9000/admin/users) de acceso y guardarlo para usarlo más adelante.
+4. [Crear un token](http://localhost:9000/account/security) de acceso y guardarlo para usarlo más adelante.
 
 ## SonarScanner
 
 Lanzar el script de escaneado correspondiente a la plataforma y tipo de proyecto que se vaya a escanear:
 
 ```
-sonar-scanner-cli-m1.sh TOKEN RUTA_PROYECTO NOMBRE_PROYECTO
+sonar-scanner-cli.sh TOKEN RUTA_PROYECTO NOMBRE_PROYECTO
 ```
 
 > La ruta al proyecto tiene que ser absoluta.
