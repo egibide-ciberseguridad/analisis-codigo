@@ -27,8 +27,10 @@ _header:
 	@echo SonarQube
 	@echo ---------
 
-start:
+_start_command:
 	@docker compose up -d sonarqube
+
+start: _start_command _urls
 
 stop:
 	@docker compose stop
