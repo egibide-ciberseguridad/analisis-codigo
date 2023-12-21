@@ -3,26 +3,24 @@ version: "3"
 services:
 
   sonarqube:
-    expose:
-      - 9000
+    image: sonarqube
     ports:
       - "127.0.0.1:9000:9000"
     networks:
       - sonarnet
     environment:
-      - sonar.jdbc.url=jdbc:postgresql://db:5432/sonar
-      - sonar.jdbc.username=sonar
-      - sonar.jdbc.password=sonar
+      - SONAR_JDBC_URL=jdbc:postgresql://postgresql:5432/sonar
+      - SONAR_JDBC_USERNAME=sonar
+      - SONAR_JDBC_PASSWORD=sonar
       - TZ=Europe/Madrid
     volumes:
-      - sonarqube_conf:/opt/sonarqube/conf
       - sonarqube_data:/opt/sonarqube/data
+      - sonarqube_logs:/opt/sonarqube/logs
       - sonarqube_extensions:/opt/sonarqube/extensions
-      - sonarqube_bundled-plugins:/opt/sonarqube/lib/bundled-plugins
     depends_on:
-      - db
+      - postgresql
 
-  db:
+  postgresql:
     image: postgres
     networks:
       - sonarnet
@@ -30,16 +28,13 @@ services:
       - POSTGRES_USER=sonar
       - POSTGRES_PASSWORD=sonar
     volumes:
-      - postgresql:/var/lib/postgresql
-      - postgresql_data:/var/lib/postgresql/data
+      - postgresql_data:/var/lib/postgresql
 
 networks:
   sonarnet:
 
 volumes:
-  sonarqube_conf:
   sonarqube_data:
+  sonarqube_logs:
   sonarqube_extensions:
-  sonarqube_bundled-plugins:
-  postgresql:
   postgresql_data:

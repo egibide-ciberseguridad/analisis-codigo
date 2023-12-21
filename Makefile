@@ -10,12 +10,12 @@ endif
 help: _header
 	${info }
 	@echo Opciones:
-	@echo -------------------------------------------------------------
-	@echo windows-wsl / windows-hyperv / linux / macos-intel / macos-m1
+	@echo --------------------------------------------
+	@echo windows-wsl / windows-hyperv / linux / macos
 	@echo stop / stop-all
 	@echo stats / logs
 	@echo clean
-	@echo -------------------------------------------------------------
+	@echo --------------------------------------------
 
 _header:
 	@echo ---------
@@ -38,20 +38,7 @@ _parche_linux:
 
 linux: _parche_linux _start _urls
 
-macos-intel: _start _urls
-
-macos-m1:
-	@docker compose -f docker-compose.yml -f docker-compose.arm64.yml up -d sonarqube
-	@$(MAKE) _urls
-
-macos-m1-build-sonarqube:
-	@docker compose -f docker-compose.yml -f docker-compose.arm64.yml build --pull sonarqube
-
-macos-m1-build-sonarqube-no-cache:
-	@docker compose -f docker-compose.yml -f docker-compose.arm64.yml build --no-cache --pull sonarqube
-
-macos-m1-build-scanner:
-	@docker compose -f docker-compose.yml -f docker-compose.arm64.yml build --pull sonar-scanner-cli
+macos: _start _urls
 
 stop:
 	@docker compose stop
