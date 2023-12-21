@@ -6,12 +6,9 @@
 
 1. Arrancar el servicio:
 
-   | Plataforma        | Comando               | 
-   |-------------------|-----------------------|
-   | Windows (WSL2)    | `make windows-wsl`    |
-   | Windows (Hyper-V) | `make windows-hyperv` |
-   | Linux             | `make linux`          |
-   | macOS             | `make macos`          |
+   ```
+   make start
+   ```
 
 2. Acceder al [sitio web](http://localhost:9000).
 
