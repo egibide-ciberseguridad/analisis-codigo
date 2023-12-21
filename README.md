@@ -14,7 +14,8 @@
 
 3. Iniciar sesión con el usuario `admin/admin` y cambiar la contraseña cuando lo pida.
 
-4. [Crear un token](http://localhost:9000/account/security) de acceso y guardarlo para usarlo más adelante.
+4. [Crear un token global de análisis](http://localhost:9000/account/security) y guardarlo para usarlo más
+   adelante.
 
 ## SonarScanner
 
