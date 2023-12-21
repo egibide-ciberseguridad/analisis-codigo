@@ -16,6 +16,12 @@ help: _header
 	@echo clean
 	@echo -----------------------
 
+_urls: _header
+	${info }
+	@echo ---------------------------------
+	@echo [SonarQube] http://localhost:9000
+	@echo ---------------------------------
+
 _header:
 	@echo ---------
 	@echo SonarQube
@@ -38,9 +44,3 @@ logs:
 
 clean:
 	@docker compose down -v --remove-orphans
-
-_urls: _header
-	${info }
-	@echo ---------------------------------
-	@echo [SonarQube] http://localhost:9000
-	@echo ---------------------------------
