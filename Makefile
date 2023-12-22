@@ -10,11 +10,12 @@ endif
 help: _header
 	${info }
 	@echo Opciones:
-	@echo -----------------------
-	@echo start / stop / stop-all
+	@echo -------------------
+	@echo start / start-linux
+	@echo stop / stop-all
 	@echo stats / logs
 	@echo clean
-	@echo -----------------------
+	@echo -------------------
 
 _urls: _header
 	${info }
@@ -31,6 +32,12 @@ _start_command:
 	@docker compose up -d sonarqube
 
 start: _start_command _urls
+
+_parche_linux:
+	@echo "Este script necesita permisos de administrador para continuar"
+	@sudo sysctl -w vm.max_map_count=262144
+
+start-linux: _parche_linux _start_command _urls
 
 stop:
 	@docker compose stop
