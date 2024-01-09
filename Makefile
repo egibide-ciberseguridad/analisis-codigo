@@ -14,6 +14,7 @@ help: _header
 	@echo start / start-linux
 	@echo stop / stop-all
 	@echo stats / logs
+	@echo update
 	@echo clean
 	@echo -------------------
 
@@ -50,6 +51,10 @@ stats:
 
 logs:
 	@docker compose logs sonarqube
+
+update:
+	@docker compose pull
+	@docker pull sonarsource/sonar-scanner-cli
 
 clean:
 	@docker compose down -v --remove-orphans
