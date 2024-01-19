@@ -10,13 +10,13 @@ endif
 help: _header
 	${info }
 	@echo Opciones:
-	@echo -------------------
-	@echo start / start-linux
+	@echo -----------------------------------
+	@echo start / start-linux / start-windows
 	@echo stop / stop-all
 	@echo stats / logs
 	@echo update
 	@echo clean
-	@echo -------------------
+	@echo -----------------------------------
 
 _urls: _header
 	${info }
@@ -39,6 +39,11 @@ _parche_linux:
 	@sudo sysctl -w vm.max_map_count=262144
 
 start-linux: _parche_linux _start_command _urls
+
+_parche_windows:
+	@c:\windows\sysnative\wsl.exe -d docker-desktop sysctl -w vm.max_map_count=262144
+
+start-windows: _parche_windows _start_command _urls
 
 stop:
 	@docker compose stop
