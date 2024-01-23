@@ -9,7 +9,7 @@ fi
 
 docker run \
   --rm \
-  --network ciberseguridad_sonarnet \
+  --network sonarqube_sonarnet \
   -e SONAR_HOST_URL="http://sonarqube:9000" \
   -e SONAR_LOGIN="$1" \
   -v "$2:/usr/src" \
