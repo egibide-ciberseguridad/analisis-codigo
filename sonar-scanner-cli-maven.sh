@@ -8,11 +8,12 @@ if [ $# -lt 3 ]; then
 fi
 
 docker run \
+  --platform=linux/amd64 \
   --rm \
   --network sonarqube_sonarnet \
   -e SONAR_HOST_URL="http://sonarqube:9000" \
-  -e SONAR_LOGIN="$1" \
   -v "$2:/usr/src" \
   sonarsource/sonar-scanner-cli \
   -D sonar.java.binaries=./target/classes/ \
+  -D sonar.token="$1" \
   -D sonar.projectKey="$3"

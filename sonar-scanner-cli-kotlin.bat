@@ -8,10 +8,10 @@ docker run ^
   --rm ^
   --network sonarqube_sonarnet ^
   -e SONAR_HOST_URL="http://sonarqube:9000" ^
-  -e SONAR_LOGIN="%1" ^
   -v "%2:/usr/src" ^
   sonarsource/sonar-scanner-cli ^
   -D sonar.exclusions="**/*.java" ^
+  -D sonar.token="%1" ^
   -D sonar.projectKey="%3"
 
 exit /b 0
