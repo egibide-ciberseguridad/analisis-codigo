@@ -26,7 +26,7 @@ Lanzar el script de escaneado correspondiente a la plataforma y tipo de proyecto
 En Linux y macOS:
 
 ```
-sonar-scanner-cli.sh TOKEN RUTA_PROYECTO NOMBRE_PROYECTO
+./sonar-scanner-cli.sh TOKEN RUTA_PROYECTO NOMBRE_PROYECTO
 ```
 
 En Windows:
@@ -35,12 +35,9 @@ En Windows:
 sonar-scanner-cli.bat TOKEN RUTA_PROYECTO NOMBRE_PROYECTO
 ```
 
-## Integración con IntelliJ
-
-[SonarQube IntelliJ Community Plugin](https://github.com/sonar-intellij-plugin/sonar-intellij-plugin)
-
 ## Referencias
 
 - [Dockerfile](https://github.com/SonarSource/docker-sonarqube/tree/master/9/community) de la imagen de Docker oficial.
 - [Fichero de Docker Compose](https://gist.github.com/Warchant/0d0f0104fe7adf3b310937d2db67b512) original.
 - [Dockerfile](https://github.com/SonarSource/sonar-scanner-cli-docker/tree/master/4) original de la imagen del scanner.
+- [SonarQube IntelliJ Community Plugin](https://github.com/sonar-intellij-plugin/sonar-intellij-plugin).
