@@ -35,6 +35,10 @@ En Windows:
 sonar-scanner-cli.bat TOKEN RUTA_PROYECTO NOMBRE_PROYECTO
 ```
 
+## Estructura de contenedores
+
+![](docs/servicios.png)
+
 ## Referencias
 
 - [Dockerfile](https://github.com/SonarSource/docker-sonarqube/tree/master/9/community) de la imagen de Docker oficial.
